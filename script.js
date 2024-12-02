@@ -11,7 +11,8 @@ if (savedUsername && savedPassword) {
     existingUserBtn.style.display = "block";
 }
 
-oginForm.addEventListener("submit", (e) => {
+// Handle form submission
+loginForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const username = usernameInput.value;
     const password = passwordInput.value;
@@ -23,8 +24,10 @@ oginForm.addEventListener("submit", (e) => {
         localStorage.removeItem("username");
         localStorage.removeItem("password");
     }
+
     alert(`Logged in as ${username}`);
-		if (rememberMeCheckbox.checked) {
+
+    if (rememberMeCheckbox.checked) {
         existingUserBtn.style.display = "block";
     }
 });
